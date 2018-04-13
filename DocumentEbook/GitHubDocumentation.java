@@ -8,4 +8,9 @@
 
  1. How to clone using Visul stdio code?
  => 
+    * open vs code the ctr + shift + P
+    * then Git clone
+    * then past the link 
+    * then save the location
+    
     
