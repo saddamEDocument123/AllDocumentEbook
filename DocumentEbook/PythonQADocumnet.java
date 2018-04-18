@@ -77,4 +77,27 @@ Beautiful Soup : Prettify!
  */
 
 
-35. 
+35.  what Prettify does ?
+=>
+    * pass any html code of errore so it will be resove the code like :
+
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup("<html><p>adddfaf<strong>Hello <a>hello</html>") //cannto close all tage
+
+    * now u have called the Prettify then c - 
+
+    soup = BeautifulSoup("<html><p>adddfaf<strong>Hello <a>hello</html>","html.parser")
+    soup.prettify()
+        '<html>\n <p>\n  adddfaf\n  <strong>\n   Hello\n   <a>\n    hello\n   </a>\n  </strong>\n </p>\n</html>'
+    print(soup.prettify())
+    <html>
+    <p>
+    adddfaf
+    <strong>
+    Hello
+    <a>
+        hello
+    </a>
+    </strong>
+    </p>
+    </html>
