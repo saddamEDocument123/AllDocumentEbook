@@ -12,4 +12,15 @@
     SELECT * FROM apitest.eventmanagement where Block_Date between '2007-09-01' AND '2007-10-01' ;
 
  
-2.
+2. How to create tabel for image or blob tabel 
+     OR
+    How to create columne or define blob data type ?
+=>
+      Create Database `apitest`;
+      DROP TABLE IF EXISTS `apitest`.`testing`;
+      CREATE TABLE `apitest`.`testing` (
+     `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+     `User_ID` varchar(2000) DEFAULT NULL,
+     `Image` longblob NOT NULL,  // We can used like this for image or blob databatype
+     PRIMARY KEY (`ID`) USING BTREE
+     ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;

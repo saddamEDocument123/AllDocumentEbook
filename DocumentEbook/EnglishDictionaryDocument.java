@@ -11,3 +11,5 @@
 5. stumble : trip or momentarily lose one's balance or almost fall or make a mistake or repeated mistakes in speaking.
 6. nuisance : a person or thing causing inconvenience or annoyance.
 7. wit : the capacity for inventive thought and quick understanding; keen intelligence or Goods sense
+
+8. Inevitable : certain to happen; unavoidable. / a situation that is unavoidable.

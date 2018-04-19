@@ -55,5 +55,45 @@
 						.setParameter("Ending_Date", Ending_Date)
 							.getResultList();
 
+5. How to find the distance within 3 or more km usign langitude and latitude in map ?
+=> 
+    * In this time we need string name and latitude and longitude that particuler 
+     location wher user is used
 
-5. 
+     // that many data or variable we need 
+     String name = distanceClass.getName();
+			double lat = distanceClass.getLat();
+			double lng = distanceClass.getLng();
+			int range = distanceClass.getRange();
+
+    // query that we all getting the distance from database ussing the math function 
+    String sqlQuery = "FROM DistanceClass WHERE ((((ACOS( SIN(RADIANS("
+					+ lat
+					+ ")) * SIN(RADIANS(lat)) + COS(RADIANS("
+					+ lat
+					+ ")) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS("
+					+ lng
+					+ ")) ) * 3963.1676) <= "
+					+ range
+					+ ")AND(name=:name )) OR (lat = "
+					+ lat
+                    + "AND lng ="
+                     + lng
+                     + ")) ";
+ // we can used the value into that way also ....we need to exexute the query
+    //into our imaple class 
+
+    List<DistanceClass> list = sessionFactory.getCurrentSession().createQuery(sqlQuery,DistanceClass.class)
+			    .setParameter("name", name)
+			    .setMaxResults(15)  
+			    .getResultList();   
+
+6. how to Get the list of limited data usign Hibernate ?
+=>
+    * Using - setMaxResults(10) Like this  
+
+        List<DistanceClass> list = sessionFactory.getCurrentSession().createQuery(sqlQuery,DistanceClass.class)
+			    .setParameter("name", name)
+			    .setMaxResults(15)  // 15 list we want thats why we are setting the number of list
+			    .getResultList(); 
+7. How 
