@@ -1,4 +1,0 @@
-I have entered some text into this file 
-this is appending text into file
-this is appending text into file
-tthis is for append pluse
