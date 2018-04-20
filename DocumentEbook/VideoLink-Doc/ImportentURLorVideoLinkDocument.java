@@ -65,6 +65,10 @@
     https://www.twilio.com/docs/api/rest/available-phone-numbers
     https://www.twilio.com/blog/2015/11/getting-started-with-spring-mvc-and-twilio.html
 
+10. Spring MVC , Hibernate and Mysql tutorial E-Book?
+=>
+    https://books.google.co.in/books?id=7JfOleET7ssC&pg=PA326&lpg=PA326&dq=how+many+type+of+breakpoint+in+java+or+spring+mvc+and+hibernate&source=bl&ots=51z-Jfb2fE&sig=yQlkCnTlxOMZb8Q8lwja3_6lCAc&hl=en&sa=X&ved=0ahUKEwj6zfK3ncjaAhVMto8KHQUkCesQ6AEItgEwEQ#v=onepage&q=how%20many%20type%20of%20breakpoint%20in%20java%20or%20spring%20mvc%20and%20hibernate&f=false
+
 
 
 
