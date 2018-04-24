@@ -24,3 +24,9 @@
      `Image` longblob NOT NULL,  // We can used like this for image or blob databatype
      PRIMARY KEY (`ID`) USING BTREE
      ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+3. What is the size of longblob , blob and MEDIUMBLOB?
+=>
+        BLOB can be 65535 bytes (64 KB) maximum.
+        MEDIUMBLOB for 16777215 bytes (16 MB)
+        LONGBLOB for 4294967295 bytes (4 GB)

@@ -137,3 +137,91 @@
                    
                 // sends the e-mail
                    mailSender.send(email); 
+
+
+3. How to Used @JsonView annotation and why we used @JsonView and When we can used?
+								OR 
+		
+=>
+ https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring
+		* We used when we need specific field return from particular corntroller 
+		* if we need diffrent json response using one dto class that time we can used
+
+    It can sometimes be useful to filter contextually objects serialized (Json response) to the HTTP response body. In order to
+	provide such capabilities.
+
+
+JsonModelClass.java 
+
+	//In this class contain one or many interface as a structure of Json response
+	//that interface also can be used as inheritence 
+	
+	package com.backend.restbackend.common;
+
+	public class JsonModelClass {
+	
+		public interface PublicView {}
+
+	}
+
+
+//Model classs 
+ImageValue.java 
+//
+	@Entity
+	@Table(name = "testing")
+	public class ImageValue {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer ID;
+	
+	
+	private String User_ID;
+
+
+	@JsonView(JsonModelClass.PublicView.class) //only need this field as a json response
+	@Lob
+	private byte[] image;
+
+//controller 
+
+
+	@JsonView(JsonModelClass.PublicView.class)
+	@RequestMapping(value = "/get/jsonview", method = RequestMethod.POST)
+	public @ResponseBody ImageValue  getSavingImageUsingJSONView(@RequestBody ImageValue imageValue ) {
+		
+		
+		
+		logger.info("User_ID Entered getSavingImage() in ImageController ");
+
+		try {
+			
+			
+			String User_ID = imageValue.getUser_ID();
+			
+			//Searches the Image in DB based on the Parameter User_ID
+			ImageValue allImageValue = imageDAO.getImageValueUsingJSONView(User_ID);
+			
+		//	JsonView.with(allImageValue).onClass(ImageValue.class, match().exclude("contains"));
+			
+			
+			if(allImageValue != null) {
+
+				return allImageValue;
+			}
+			else {
+
+				return allImageValue;
+			}
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}			
+	}
+
+
+
+
+
