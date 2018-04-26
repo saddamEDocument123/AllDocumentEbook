@@ -141,7 +141,7 @@
 
 3. How to Used @JsonView annotation and why we used @JsonView and When we can used?
 								OR 
-		
+	How to return particular Json field remaing Json field will be hidde and no need to create new Json class?
 =>
  https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring
 		* We used when we need specific field return from particular corntroller 

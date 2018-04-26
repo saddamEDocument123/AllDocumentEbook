@@ -96,4 +96,76 @@
 			    .setParameter("name", name)
 			    .setMaxResults(15)  // 15 list we want thats why we are setting the number of list
 			    .getResultList(); 
-7. How 
+
+7. How one dto class from two different dto class ?
+                    OR 
+     how to join two table into one dto or entity class ?   
+                    OR
+    how to make multiple table in one entity class ?
+                    OR
+    Map a single entity with multiple table using jpa?
+
+=>  
+
+    @Entity
+    @Table(name="TABLE1")
+    @SecondaryTables({
+    @SecondaryTable(name="TABLE2",
+        pkJoinColumns = @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
+    ),
+    @SecondaryTable(name="TABLE3",
+        pkJoinColumns = @PrimaryKeyJoinColumn(name="ID", referencedColumnName="ID")
+    )}
+    )
+    Example :
+             
+            @Entity
+            @Table(name = "usershop_details")
+        //Here we are joinig two tabel into one dto class
+            @SecondaryTables({
+                @SecondaryTable(name="address", pkJoinColumns={@PrimaryKeyJoinColumn(name = "ID")})
+                
+
+            })
+            public class UserAddress {       
+                    @Id
+                    @GeneratedValue(strategy = GenerationType.IDENTITY)
+                    private int ID;
+                    //private String Shop_ID;
+                    
+                    private String Shop_ID;
+                    
+                    private String User_ID;
+                    private String Name;
+                    private String User_Name;
+                    private String User_Password;
+                    @Column(name="phn_number")
+                    private String Contact;
+                    private String Email;
+                    private boolean Is_Active;
+                    private boolean Shop_Count;
+                    
+                    
+                    @Column(name="Shop_ID", table="address")
+                    private String ShopID;
+                    
+                    @Column(name="User_ID", table="address")
+                    private String UserID;
+                    @Column(table="address")
+                    private String House_No;
+                    @Column(table="address")
+                    private String Locality;
+                    @Column(table="address")
+                    private String Landmark;
+                    @Column(table="address")
+                    private String PinCode;
+                    @Column(table="address")
+                    private String Area;
+                    @Column(table="address")
+                    private String City;
+                    
+                    @Column(table="address")
+                    private boolean Address_Active;
+                    
+                    
+                    public UserAddress() {}

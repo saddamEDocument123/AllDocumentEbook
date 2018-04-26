@@ -49,14 +49,20 @@ yesterday, I slept late, went shopping ,  and spoke my month
 2. Simple Future tense 
 =>
 Whe we used :
-    Going TO / NOT GOING TO :
+    Going TO or gonna / NOT GOING TO :
     * plans decided before the conversation - u make desision before conversation going to 
     * or that plans u decided in past telling now for future that time we used going to 
-
+    * going to or not going to used when  my decision already made by in past 
     WILL / WONT
     * decision of moment of speaking
     * low certanty / probabily 
-    probabily wont 
-    (time 42.42)
+       i will probabily
+    * lower chance
+    * will and wont used when make my decision in that momento or a very quick , plan are jsuxt 
+    made 
+
+    Example :
+    Maybe  i'll     go hiking tomorrow
+   
 
 
