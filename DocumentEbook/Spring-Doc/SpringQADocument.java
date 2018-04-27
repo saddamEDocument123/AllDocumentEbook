@@ -10,10 +10,11 @@
 
 
 2. List the advantages of Spring Framework.
-Because of Spring Frameworks layered architecture, you can use what you need and leave which you don’t.
-Spring Framework enables POJO (Plain Old Java Object) Programming which in turn enables continuous integration and testability.
-JDBC is simplified due to Dependency Injection and Inversion of Control.
-It is open-source and has no vendor lock-in.
+=>
+    Because of Spring Frameworks layered architecture, you can use what you need and leave which you don’t.
+        Spring Framework enables POJO (Plain Old Java Object) Programming which in turn enables continuous integration and testability.
+        JDBC is simplified due to Dependency Injection and Inversion of Control.
+        It is open-source and has no vendor lock-in.
 3. What are the different features of Spring Framework?
 Following are some of the major features of Spring Framework :
 
