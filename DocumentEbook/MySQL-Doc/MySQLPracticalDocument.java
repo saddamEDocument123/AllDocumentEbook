@@ -30,3 +30,23 @@
         BLOB can be 65535 bytes (64 KB) maximum.
         MEDIUMBLOB for 16777215 bytes (16 MB)
         LONGBLOB for 4294967295 bytes (4 GB)
+
+4. Best Way to create MySql table Example ?
+=>
+    DROP TABLE IF EXISTS `currency`;
+
+    CREATE TABLE `currency` (
+    `iCurrencyId` int(8) NOT NULL AUTO_INCREMENT,
+    `vName` varchar(10) NOT NULL,
+    `vSymbol` varchar(20) CHARACTER SET utf8 NOT NULL,
+    `iDispOrder` int(11) NOT NULL,
+    `eDefault` enum('Yes','No') NOT NULL DEFAULT 'No',
+    `Ratio` double(10,6) NOT NULL,
+    `fThresholdAmount` float(13,6) NOT NULL COMMENT 'Admin will enter min currency value for driver to be request',
+    `eStatus` enum('Active','Inactive') NOT NULL DEFAULT 'Active',
+    PRIMARY KEY (`iCurrencyId`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+        
+        LOCK TABLES `currency` WRITE;
+        INSERT INTO `currency` VALUES (1,'USD','$',1,'Yes',1.000000,40.000000,'Active')),
+        UNLOCK TABLES;
