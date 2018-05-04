@@ -1,6 +1,11 @@
-/**
+/****
+All Logic which is used in procject
 
  */
+
+
+
+
 
 1. Mobile Sms integration using Twilio  in java ?
 =>	
@@ -350,12 +355,36 @@ ImageValue.java
 
 		{"message_id":5245072321129692466}
 
-
-
-
-5. What is the CompletableFuture in java ?
+5. How to creae OTP using automaticly ?
 =>
-	CompletableFuture is used for asynchronous programming in Java. Asynchronous programming is a means of writing 
-	non-blocking code by running a task on a separate thread than the main application thread and notifying the main 
-	hread about its progress, completion or failure.
+			//create OTP for texting mesg
+				 String sendingOTP = String.valueOf(sendOTP(6));
+			        System.out.println(sendingOTP);
 
+
+			//Function 
+
+				//Generate automatic  OTP
+	static char[] sendOTP(int length){
+		
+		String  number= "0123456789";
+		Random r = new Random();
+		char[] otp = new char[length];
+
+		 for(int i=0 ; i<length ;i++){
+
+		    otp[i] = number.charAt(r.nextInt((number.length())));
+		 } 
+		 return otp;
+		 }
+
+
+6. How to generate automaticly token  ?
+=>
+	* Create new class in that new class u just genatre defalut constructor and write this code -
+
+	public Product() {
+		 this.code = UUID.randomUUID().toString().substring(26).toUpperCase();
+	 }
+
+	* It will be automaticly genarete the unique token 
