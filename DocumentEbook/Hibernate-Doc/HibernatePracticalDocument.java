@@ -169,3 +169,13 @@
                     
                     
                     public UserAddress() {}
+
+
+8. How to get random number or value from database ?
+=>
+	String selectLogin = "FROM AppToken ORDER BY rand()";
+		
+	List<AppToken> list = sessionFactory.getCurrentSession()
+						.createQuery(selectLogin,AppToken.class)
+							.setMaxResults(1)
+								.getResultList();

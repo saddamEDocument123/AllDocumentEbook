@@ -50,3 +50,9 @@
         LOCK TABLES `currency` WRITE;
         INSERT INTO `currency` VALUES (1,'USD','$',1,'Yes',1.000000,40.000000,'Active')),
         UNLOCK TABLES;
+
+
+
+5. How to get random number or value from database ?
+=>
+    FROM AppToken ORDER BY rand()

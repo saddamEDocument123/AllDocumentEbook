@@ -388,3 +388,14 @@ ImageValue.java
 	 }
 
 	* It will be automaticly genarete the unique token 
+
+
+7. How to get random number or value from database ?
+=>
+	String selectLogin = "FROM AppToken ORDER BY rand()";
+	//	Query query = sessionFactory.getCurrentSession().createQuery(selectLogin).setMaxResults(1);
+		
+	List<AppToken> list = sessionFactory.getCurrentSession()
+						.createQuery(selectLogin,AppToken.class)
+							.setMaxResults(1)
+								.getResultList();
