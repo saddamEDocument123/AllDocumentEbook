@@ -159,9 +159,35 @@ Json Request :
      }
 
   
-4. Get all list of shop from your location 
+4. Get all list of shop near by you
 
 Json Request :
             {
-                
+
+                "User_Latitude" : "",
+                "User_Longitude" : ""
+                "range" : ""
+
             }
+
+Json Response :
+        {
+            "status_code" : "",
+            "status_message" : "",
+            "Data: 
+            [
+                {
+                    "s_ID" : "",
+                    "S_Longitude" : "",
+                    "S_Latitude" : ""
+
+                },
+                {
+                    "s_ID" : "",
+                    "S_Longitude" : "",
+                    "S_Latitude" : ""
+                },
+
+                .......
+            ]
+        }
