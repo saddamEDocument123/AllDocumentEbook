@@ -109,3 +109,8 @@
     non-key field (i.e. doesn’t contain unique entries) then the entire tablespace must be searched at N block accesses.
     Whereas with a sorted field, a Binary Search may be used, which has log2 N block accesses. Also since the data is sorted given a non-key field, 
     the rest of the table doesn’t need to be searched for duplicate values, once a higher value is found. Thus the performance increase is substantial.
+
+12. what is the size of text data type in mysql ?
+=>
+    TEXT is a string data type that can store up to 65,535 characters. TEXT is commonly used for storing blocks of text such as the body of an article.
+    MEDIUMTEXT is a string data type with a maximum length of 16,777,215 characters
