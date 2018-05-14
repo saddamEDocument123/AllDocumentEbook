@@ -399,3 +399,152 @@ ImageValue.java
 						.createQuery(selectLogin,AppToken.class)
 							.setMaxResults(1)
 								.getResultList();
+
+
+8. How to do encrypted password using spring and hibernate ?
+=>
+	* step 1 : create Encryption class - 
+
+	import java.math.BigInteger;
+	import java.security.MessageDigest;
+
+		public class Encryption {
+			public static String encrypt(String source) {
+				String md5 = null;
+				try {
+					MessageDigest mdEnc = MessageDigest.getInstance("MD5"); // Encryption algorithm
+					mdEnc.update(source.getBytes(), 0, source.length());
+					md5 = new BigInteger(1, mdEnc.digest()).toString(16); // Encrypted string
+				} catch (Exception ex) {
+					return null;
+				}
+				return md5;
+			}
+		}
+
+		Step 2: create controller class for saving password and validation from databse --
+
+					/*
+				* @this is saving encrypted password into databse controller 
+				* **/
+				
+				@RequestMapping(value = "/password/encryption", method = RequestMethod.POST)
+				public @ResponseBody SuccResponse passwordEncryption(@RequestBody UserData userData) {
+					
+					logger.info("Saving encrypted passwrod method in loginController");
+					try {
+						
+						SuccResponse succResponse = new SuccResponse();
+						
+						if(loginDAO.savingEncriptedPassword(userData)) {
+							succResponse.setStatus_code("200");
+							succResponse.setStatus_message("succssfully password encrypeted and save into database");
+							
+							return succResponse;
+							
+						}
+						else {
+							succResponse.setStatus_code("400");
+							succResponse.setStatus_message(" value is not save into database");
+							return succResponse;
+						}
+						
+					}catch (Exception e) {
+						e.printStackTrace();
+						return null;
+					}
+					
+					
+				}
+				
+				
+
+				/*
+				* @this is saving encrypted password into databse controller 
+				* **/
+				
+				@RequestMapping(value = "/password/encryption/login", method = RequestMethod.POST)
+				public @ResponseBody UserData loginAndValidateEncrypetedPassword(@RequestBody UserData userData) {
+					
+					logger.info("Saving encrypted passwrod method in loginController");
+					try {
+						
+						SuccResponse succResponse = new SuccResponse();
+						
+						//userData.setPassword(Encryption.encrypt(userData.getPassword()));
+						UserData loginList = loginDAO.loginIntoDatabase(userData);
+						
+						if(loginDAO.savingEncriptedPassword(userData)) {
+							succResponse.setStatus_code("200");
+							succResponse.setStatus_message("succssfully password encrypeted and save into database");
+							
+							return loginList;
+							
+						}
+						else {
+							succResponse.setStatus_code("400");
+							succResponse.setStatus_message(" value is not save into database");
+							return loginList;
+						}
+						
+					}catch (Exception e) {
+						e.printStackTrace();
+						return null;
+					}
+		
+
+	Step 3: daoImpl class for saving and validation from database logic -- 
+
+				/**
+				* this is the loginDAOImple class 
+				* create method and saving password using encrypted value
+				* ***/
+				
+				@Override
+				public boolean savingEncriptedPassword(UserData userData) {
+					
+					log.debug("Inserting LoginDAOImpl class of saving password as a Encrypted ");
+					try {
+						//UserData userData1 = new UserData();
+						userData.setPassword(Encryption.encrypt(userData.getPassword()));
+						//System.out.println("encripted password is :" + userData1);
+						sessionFactory.getCurrentSession().persist(userData);
+						return true;
+					}catch (RuntimeException re)
+					{
+						log.error("get failed", re);
+						throw re;
+					}
+
+				}
+
+				@Override
+				public UserData loginIntoDatabase(UserData userData) {
+					log.debug("Inserting LoginDAOImpl class of saving password as a Encrypted ");
+					try {
+						String user =userData.getUserName();
+						String password = (Encryption.encrypt(userData.getPassword()));
+						
+						String showingAllBlockDate = "from UserData where userName=:user and password=:password ";
+						
+						List<UserData> list  = sessionFactory.getCurrentSession().createQuery(showingAllBlockDate)
+												.setParameter("user", user)
+												.setParameter("password", password)
+													.getResultList();
+
+						
+						if ((list != null) && (list.size() > 0)) {
+							// userFound= true;
+							log.debug("get successful,User Name and Password found");
+							userData = list.get(0);
+							return userData;
+						} else {
+							log.debug("get successful,No User Name and Password found ");
+							return userData;
+						}
+					}catch (RuntimeException re)
+					{
+						log.error("get failed", re);
+						throw re;
+					}
+				}
