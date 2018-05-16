@@ -140,6 +140,51 @@
 
 
 
+4. how to show current location into google map using AGm in angulerjs2?
+            OR 
+    How to intregate angular 2 web app to Google map ?
+
+=>
+    Step 1 : install your anguler google maps :
+
+            npm install @agm/core --save
+
+    Step 2 : create google clode poject and get api key after that u have to enable that project for 
+                google map javascript api 
+
+                for help follow that blog -
+                url - https://angular-maps.com/guides/getting-started/
+
+              url :  https://console.cloud.google.com/google/maps-apis/overview?project=directed-will-204212
+            url : https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key
+
+    Step 3 : add some code into app.module.ts file --
+
+            import { AgmCoreModule } from '@agm/core';
+
+            AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAxbvzHrsuVUVw9eb7qkalE6l_406T70Qc' // your Google map api key
+    })
+
+    Step 4 : after that send your longitude and latitude from home.component.ts file 
+
+    Step 5 : after that add google map code into your home.component.html page --
+
+
+            <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+
+    Step 6 : for dispaly that map we have to used some css file like home.component.css file , we have to 
+            add some css contain --
+
+                agm-map {
+                    height: 300px;
+                        }
+
+5. 
+        
+
     
 
 

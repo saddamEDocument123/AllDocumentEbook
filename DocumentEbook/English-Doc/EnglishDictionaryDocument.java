@@ -13,3 +13,6 @@
 7. wit : the capacity for inventive thought and quick understanding; keen intelligence or Goods sense
 
 8. Inevitable : certain to happen; unavoidable. / a situation that is unavoidable.
+
+9. Dissecting : as the text of the gospels was dissected, some parts came to look earlier than others: 
+                    analyse, examine, study, inspect
