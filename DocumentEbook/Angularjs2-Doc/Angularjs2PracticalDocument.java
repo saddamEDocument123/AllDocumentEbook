@@ -182,9 +182,31 @@
                     height: 300px;
                         }
 
-5. 
-        
+5. How to add custom css and bootstrap and js file in angulerjs2 ?
+=>
+    Step 1 : get good bootstrap style from getbootstrap.com
 
+    Step 2 : install bootstrap flile into e2e project fiel like --
+
+        cd e2e 
+
+        then run this command ---
+        $ npm install --save bootstrap@3
+
+    Step 3 :
+        then modify in your project  .angular-cli.json file like this --
+
+            .angular-cli.json 
+
+        "styles": [
+        "styles.css",
+        ".././node_modules/bootstrap/dist/css/bootstrap.css"
+            ],
+         "scripts": [
+        ".././node_modules/bootstrap/dist/js/bootstrap.js"
+        ],
+        
+    Step 4 : then copied some bootstrap included html page and run ur application
     
 
 
