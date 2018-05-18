@@ -208,7 +208,35 @@
         
     Step 4 : then copied some bootstrap included html page and run ur application
     
+6. How to install jquery in angularjs 2 ?
+=>
+    Step 2 : install jquery flile into e2e project fiel like --
 
+        cd e2e 
+
+        then run this command ---
+        npm install jquery --save
+
+        npm install --save-dev @types/jquery
+
+
+
+    Step 3 :
+        then modify in your project  .angular-cli.json file like this --
+
+            .angular-cli.json 
+
+       "apps": [{
+            "scripts": [
+                 "../node_modules/jquery/dist/jquery.min.js", // check your ref path it might be different.
+                         ],
+                }]
+
+    Step 4 : then imaport the jquery file into particuler component file 
+
+                import * as $ from 'jquery/dist/jquery.min.js';
+        
+    Step 5 : then copied some bootstrap included html page and run ur application
 
 
 
