@@ -238,7 +238,10 @@
         
     Step 5 : then copied some bootstrap included html page and run ur application
 
-
+7. How to import .js file externally ?
+=>
+    Step 1 :
+            
 
 
 
