@@ -412,3 +412,36 @@ Beautiful Soup : Prettify!
             >>> data3.contents[0]
             '57°'
             >>> 
+
+
+44. How to install pip , tensorflow, beautifulsoup4 and requests in pycharm ?
+=>
+
+        import pip
+        pip.main(['install', 'tensorflow'])
+
+        pip.main(['install', 'beautifulsoup4'])
+
+        pip.main(['install', 'requests'])
+
+45. How to get array length in python ?
+=>
+    a=[4,5,3]
+    len(a)  //using len
+
+46. BeautifulSoup : Antonym Parsing 
+
+
+
+
+
+/***
+
+MatPlotLib 
+ */
+
+    * create graph and chart 
+
+    pip install matplotlib
+    
+    pip.main(['install', 'matplotlib'])
