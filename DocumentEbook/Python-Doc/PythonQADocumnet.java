@@ -445,3 +445,9 @@ MatPlotLib
     pip install matplotlib
     
     pip.main(['install', 'matplotlib'])
+
+47. how to install sklearn , quandl , pandas
+=>
+    pip install sklearn
+    pip install quandl
+    pip install pandas
