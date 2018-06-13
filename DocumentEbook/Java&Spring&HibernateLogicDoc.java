@@ -548,3 +548,12 @@ ImageValue.java
 						throw re;
 					}
 				}
+
+9. How to start tomcat using mac termina ?
+=>
+	./startup.sh && tail -f ../logs/catalina.out
+
+
+10. How to used equal() and hashCode() in java and why ?
+=>
+	
