@@ -14,6 +14,17 @@ KYC verification for PAN ;
 3.  NSE site for gold stcok market
 4. for commoditiis  site :MCX
 
+Zerodha account :
+1. pand card
+2. aadhar card
+3. Bank proof (cancel cheque & Bank statement)
+4. Income Proof (Salary slip bank statement 6 month)
+5. Signeture
+
+two hard copy 
+6. POA from
+7. commoditiis from (ECN from)
+
 
 
 
