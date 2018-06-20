@@ -25,6 +25,13 @@ two hard copy
 6. POA from
 7. commoditiis from (ECN from)
 
+Zerodha :
+CNC : cash and carry order
+MIS : Intraday ,
+
+
+knowledge :
+1. Power of compounding 
 
 
 
